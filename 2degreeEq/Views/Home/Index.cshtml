@@ -3,7 +3,20 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Cálculo das raízes de uma Equação de 2º Grau</h1>
 </div>
+
+<form>
+    Introduza, por favor, os coeficientes da Equação <br />
+    <!-- o tipo vai ser "text" para conseguir ter números fracionários
+        o type="number" apenas aceita números inteiros -->
+    a=<input type="text" id="a" /> <br />
+    b=<input type="text" id="b" /> <br />
+    c=<input type="text" id="c" /> <br />
+
+    <!-- vamos utilizar um input para fazer de botão porque não vamos utilizar o javascript -->
+    <input type="submit" value="Calcular" />
+</form>
+<!-- Ao aplicarmos o forma, quando clicamos no botão de "calcular" os dados já estão a ser enviados
+    para o servidor, apenas não estamos a fazer mais nada-->
 
