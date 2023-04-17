@@ -1,22 +1,37 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
+    // var auxiliar
+    string resposta = "";
+
+    // recuperar os dados enviados pelo controller
+    if (!string.IsNullOrEmpty(ViewBag.X1))
+    {
+        resposta = "As raízes são: x1=" + ViewBag.X1 + " e x2=" + ViewBag.X2;
+    }
 }
 
+<!-- nesta zona vamos escrever HTML -->
+@*   este outro comentário está feito em RAZOR e é invisível no browser   *@
+
 <div class="text-center">
-    <h1 class="display-4">Cálculo das raízes de uma Equação de 2º Grau</h1>
+    <h1 class="display-4">Cálculo das Raízes de uma equação do 2º grau</h1>
 </div>
 
+
 <form>
-    Introduza, por favor, os coeficientes da Equação <br />
-    <!-- o tipo vai ser "text" para conseguir ter números fracionários
-        o type="number" apenas aceita números inteiros -->
-    a=<input type="text" id="a" /> <br />
-    b=<input type="text" id="b" /> <br />
-    c=<input type="text" id="c" /> <br />
 
-    <!-- vamos utilizar um input para fazer de botão porque não vamos utilizar o javascript -->
+    <p>
+        introduza, por favor, os valores dos parâmetros da equação
+    </p>
+
+    <b>a:</b> <input type="text" name="A" /><br />
+    <b>b:</b> <input type="text" name="B" /><br />
+    <b>c:</b> <input type="text" name="C" /><br />
+
     <input type="submit" value="Calcular" />
-</form>
-<!-- Ao aplicarmos o forma, quando clicamos no botão de "calcular" os dados já estão a ser enviados
-    para o servidor, apenas não estamos a fazer mais nada-->
 
+</form>
+
+@* vou recuperar aqui o valor da resposta, preparada nas linhas 8 e 9*@
+<h4>@resposta</h4>
